@@ -1,0 +1,299 @@
+/* General */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #f7efef;
+    --primary-color: #12284c;
+    --accent-color: #f5333f;
+}
+
+@font-face {
+    font-family: 'fa brands';
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto;
+    src: url(https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-brands-400.eot);
+    src: url(https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-brands-400.eot?#iefix) format('embedded-opentype'), url(https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-brands-400.woff2) format('woff2'), url(https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-brands-400.woff) format('woff'), url(https://use.fontawesome.com/releases/v5.13.0/webfonts/fa-brands-400.ttf) format('truetype'), url(https://use.fontawesome.com/releases/v5.13.0/webfonts/ffa-brands-400.svg#fontawesome) format('svg');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Playfair Display',sans-serif;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* Nav */
+
+.nav {
+    display: flex;
+    position: fixed;
+    justify-content:space-between;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: var(--background-color);
+    z-index: 999;
+}
+
+.nav .logo {
+    height: 65px;
+    margin-left: 12px;
+}
+
+
+.nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+.nav li {
+    list-style: none;
+    margin: auto 6px;
+}
+
+.nav a {
+    color: var(--primary-color);
+    padding: 8px;
+    text-transform: lowercase;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    border-bottom: 3px solid var(--primary-color);
+}
+
+
+section:first-of-type {
+    margin-top: 60px;
+}
+
+    /* Nav adjust for small screens */
+
+    @media only screen and (max-width: 600px) {
+
+        .nav {
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav .logo {
+            margin: 0 auto;
+            text-align: center;
+            justify-self:center;
+        }
+
+        .nav ul {
+            margin: 8 auto;
+            text-align: center;
+        }
+
+        .nav li {
+            margin: 10px 8vw;
+        }
+        
+        .nav a {
+            color: var(--primary-color);
+            padding: 16px;
+            text-transform: lowercase;
+            text-decoration: none;
+        }
+
+        section:first-of-type {
+            margin-top: 120px;
+        }
+    }
+
+/* About */
+
+.welcome-section:before {
+    content: "";
+    display: block;
+    margin: -60px 0 0;
+    height: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+    .welcome-section:before {
+        content: "";
+        display: block;
+        margin: -120px 0 0;
+        height: 120px;
+    }
+}
+
+.welcome-section {
+    display: block;
+    height: 100vh;
+    background-image: url(./IMG_1149.jpg);
+    background-size: cover;
+    background-color: rgb(196, 159, 159);
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+.welcome-section h1, .welcome-section h2 {
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    
+}
+
+
+.welcome-section h1 {
+    margin-top: 50px;
+    font-size: 4rem;
+}
+
+.welcome-section h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    color: var(--background-color);
+    background-color: var(--accent-color);
+    padding: 3px 8px;
+}
+
+/* Section titles */
+
+.section-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 3rem;
+    font-family: 'Playfair Display', sans-serif;
+    margin-top: 25px;
+}
+
+.section-title::before, .section-title::after {
+    content: " · ";
+    font-family: 'Playfair Display', sans-serif;
+}
+
+/* Work */
+
+.projects-section:before {
+    content: "";
+    display: block;
+    margin: -60px 0 0;
+    height: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+    .projects-section:before {
+        content: "";
+        display: block;
+        margin: -120px 0 0;
+        height: 120px;
+    }
+}
+
+.projects-section .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 0 10vw;
+}
+
+.projects-section a {
+    width: 200px;
+    margin: 15px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.projects-section .img-wrapper {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    background-color: var(--accent-color);
+}
+
+.projects-section img {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    mix-blend-mode: multiply;
+}
+
+.projects-section img:hover {
+    opacity: 1;
+    mix-blend-mode: normal;
+}
+
+.projects-section .project-title {
+    margin: 5px 0 5px 8px;
+    padding: 0;
+}
+
+@media only screen and (max-width: 1000px) {
+    .projects-section .flex-container::after {
+        content: "";
+        width: 220px;
+      }
+}
+
+/* Contact */
+
+.contact-section:before {
+    content: "";
+    display: block;
+    margin: -60px 0 0;
+    height: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+    .contact-section:before {
+        content: "";
+        display: block;
+        margin: -120px 0 0;
+        height: 120px;
+    }
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    font-family: 'Raleway', sans-serif;
+}
+
+footer p {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0.5rem;
+    font-weight: 600;
+}
+
+footer .fa-github {
+    font-family: 'fa brands';
+    font-style: normal;
+    font-size: 1.10rem;
+}
+
+footer img {
+    filter: brightness(0) invert(1);
+    vertical-align: top;
+}
+
+footer a {
+    color: var(--background-color);
+}
